@@ -4,7 +4,26 @@ Activité : gestion des contacts
 
 // TODO : complétez le programme
 
+let contacts=[
+    {
+        prenom: "Xavier",
+        nom:"Lami"
+
+    },
+
+    {
+        prenom:"Jean",
+        nom:"Dujardin"
+    }
+];
+
+do{
+
 console.log("Bienvenue dans le gestionnaire de contact")
+
+console.log("1: Lister les contacts");
+console.log("2: Ajouter des contacts");
+console.log("0: Quitter");
 
 //1: Fonction qui liste les contacts
 //2:Fonction qui permet d'ajouter des contatcs
@@ -12,78 +31,58 @@ console.log("Bienvenue dans le gestionnaire de contact")
 
 var promptOption= prompt("Choisir une option : ");
 
-console.log("1: Lister des contacts");
-console.log("2: Ajouter des contacts");
-console.log("0: Quitter");
-/*
-const contact ={
 
-    prenom: "Carole",
-    nom: "Lévisse",
+//function listeChoix(){
 
-    listeContact(){
-
-        console.log("Voici la liste de tout vos contacts : ")
-        return `Prénom : ${this.prenom}, Nom : ${this.nom}`;
-    },
-
-    ajoutContact(){
-
-        if(promptOption === "2"){
-
-            var promptPrenom = prompt("Prenom : ");
-            var promptNom = prompt("Nom : ");
-
-            
-            this.prenom = promptPrenom;
-            this.nom = promptNom;
-
-            
-
-        }
-
-         console.log("Voici votre nouveau contact  : ")
-        return `Prénom : ${this.prenom}, Nom : ${this.nom}`;
-
-    }
-   
-};
-
-console.log(contact.listeContact());
-console.log(contact.ajoutContact());
-*/
-
-//function listeContact(){  // /!\ AVEC MA FUNCTION MES TABLEAUX NE ME RENVOIENT PAS TOUTES MES VALEURS DE contact /!\
-
-        prenom =["Carole","Mélodie"];
-        nom =["Lévisse","Nelsonne"];
-
-        if(promptOption==1){ // Si choix option 1
-            console.log("Voici la liste de tout vos contacts : ");
-            
-            for (let i=0;i<prenom.length;i++){
-            
-            let contact='Prenom : '+prenom[i]+', '+ 'Nom : '+nom[i];
-            //return contact;
-            console.log(contact);
-            
-            }
-     
-        }
-        if(promptOption==2){ // Si choix option 2
-
-            var promptPrenom = prompt("Prenom : ");
-            var promptNom = prompt("Nom : ");
-        
-            prenom.push("Xavier"); // Inserer le promptPrenom dans la derniere position du tableau prenom
-            nom.push("Lami");  // Inserer le promptNom dans la derniere position du tableau nom
-
-            console.log(contact)
-        } 
-         
 //}
-//console.log(listeContact());
+//listeChoix()
 
+
+
+
+if(promptOption == 1){
+    function lireContact(contact){
+        console.log("Voici la liste de tout vos contacts : ");
+
+    
+        for(var personne of contacts){
+        
+        contact = console.log(personne.prenom +' '+ personne.nom);
+        }   
+        return contact;
+    }
+
+    lireContact()
+}
+if(promptOption == 2){
+    function ajoutContact(contact){
+        
+        var newPrenom = prompt("Prenom : ");
+        var newNom = prompt("Nom : "); 
+
+        let newContact={
+
+            prenom:newPrenom,
+            nom:newNom
+
+        };
+          contacts.push(newContact) ;  
+
+          
+          for(let i=0;i<contacts.length;i++)
+          {
+              
+              contacts[i].prenom+' '+contacts[i].nom;
+          }
+        console.log("Contact ajouter !")
+     }
+    ajoutContact()
+    
+    
+}
+} while(promptOption != 0){
+    console.log("Fin du programme")
+}
 
 
 
