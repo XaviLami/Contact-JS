@@ -32,13 +32,6 @@ console.log("0: Quitter");
 var promptOption= prompt("Choisir une option : ");
 
 
-//function listeChoix(){
-
-//}
-//listeChoix()
-
-
-
 
 if(promptOption == 1){
     function lireContact(contact){
